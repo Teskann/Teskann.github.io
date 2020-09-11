@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NiceVue</title>
+        <meta charset="UTF-8">
+       
+        <link rel="stylesheet" href="ol/ol.css" type="text/css">
+        <script src="ol/ol.js"></script>
+        
+        <link rel="stylesheet" href="map.css" type="text/css">
+    </head>
+    <body>
+        <div id="controlPanel">
+            <h1><a href=index.html>NiceVue</a></h1>
+
+            <img src="clickmap.svg" alt="" id="clickmap" onclick="clickMap()">
+
+            <img src="location.svg" alt="" id="location" onclick="clickLocation()">
+
+            <img id="moon" src="moon.svg" alt="Dark theme logo">
+            <label class="switch">
+                <input id="toggle" type="checkbox" onchange="changeTheme()">
+                <span class="slider round"></span>
+            </label>
+
+            <input id="searchbar" type="text" placeholder="Search for any place ...">
+
+            <span id="wrongsearch" onclick="displaySearchPopup()">This is not the place I was looking for</span>
+
+            <h2>Place Details</h2>
+            <table>
+                <tr>
+                    <th colspan="2">Name</th>
+                </tr>
+                <tr>
+                    <td colspan="2", id="placeName"></td>
+                </tr>
+                <tr>
+                    <th colspan="2">Coordinates</th>
+                </tr>
+                <tr class="data">
+                    <td>Latitude :</td>
+                    <td id="latitude"></td>
+                </tr>
+                <tr class="data">
+                    <td>Longitude :</td>
+                    <td id="longitude"></td>
+                </tr>
+                <tr class="data">
+                    <td>Elevation :</td>
+                    <td id="elevation"></td>
+                </tr>
+                <tr class="data">
+                    <td>Height :</td>
+                    <td id="height"></td>
+                </tr>
+                <tr class="data">
+                    <td>Altitude :</td>
+                    <td id="altitude"></td>
+                </tr>
+                <tr>
+                    <th colspan="2">View</th>
+                </tr>
+                <tr class="data">
+                    <td>Geodesical Horizon :</td>
+                    <td id="horizon"></td>
+                </tr>
+                <tr class="data">
+                    <td>Visibility</td>
+                    <td id="visibility"></td>
+                </tr>
+            </table>
+        </div>
+
+
+        <div id="map" class="map"></div>
+
+        <div id="searchdiv">
+            <h2>Other Results</h2>
+            <li id="searchlist">
+                <ul>test</ul>
+                <ul>test</ul>
+                <ul>test</ul>
+                <ul>test</ul>
+            </li>
+        </div>
+        
+        <script src="src/script.js"></script>
+        <script src="map.js"></script>
+    </body>
+</html> 
