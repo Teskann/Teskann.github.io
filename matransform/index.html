@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="icon.png">
+    <meta charset="utf-8">
+    <title>Matrix Transformations</title>
+  </head>
+  <body>
+      <div id="options">
+        <h2>Input Matrix</h2>
+        <div id="matrixGO">
+          <table id=matrice>
+            <tr>
+              <td rowspan="2"><span class="big">A</span> = </td>
+              <td class="openBracket" rowspan="2"></td>
+              <td class="number"><mn><input type="text" class="matrix" id="x1" value="1"></mn></td>
+              <td class="number"><mn><input type="text" class="matrix" id="x2" value="0"></mn></td>
+              <td class="closeBracket" rowspan="2"></td>
+            </tr>
+            
+            <tr>
+              <td class="number"><mn><input type="text" class="matrix" id="y1" value="0"></mn></td>
+              <td class="number"><mn><input type="text" class="matrix" id="y2" value="1"></mn></td>
+            </tr>
+          </table>
+          <button id="go" class="toolBtn" onclick="matrixGo('Polynomial')">GO !</button><br>
+          <button class="toolBtn" onclick="invertMat()">Invert</button>
+          <button class="toolBtn" onclick="identity()">Id</button>
+          <button class="toolBtn" onclick="random()">Rand</button>
+          
+        </div>
+        <h2>Matrix Properties</h2>
+        <div id="determinant">
+          det(A) = 
+          <span id="detValue">1</span>
+        </div>
+        <div id="eigVal">
+          <table>
+            <tr>
+              <td>&lambda;<span class="subs">1</span> = <span id="L1" class="number">1</span></td>
+            </tr>
+            <tr>
+              <td>&lambda;<span class="subs">2</span> = <span id="L2" class="number">1</span></td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <td rowspan="2">v<span class="subs">1</span> = </td>
+              <td class="openBracket" rowspan="2"></td>
+              <td class="number"><span id=V11>1</span></td>
+              <td class="closeBracket" rowspan="2"></td>
+            </tr>
+              <tr>
+                <td class="number"><span id=V12>0</span></td>
+              </tr>
+            <tr>
+              <td rowspan="2">v<span class="subs">2</span> = </td>
+              <td class="openBracket" rowspan="2"></td>
+              <td class="number"><span id=V21>0</span></td>
+              <td class="closeBracket" rowspan="2"></td>
+            </tr>
+            
+              <td class="number"><span id=V22>1</span></td>
+            </tr>
+          </table>
+        </div>
+        <h2>Transform</h2>
+        <div id="rotate">
+            <span>Rotate :</span><br>
+            <input type="range" id="thetaRange" min="0" max="2" step="0.01" value="0" onchange="updateThetaDisplay(this.value)" oninput="updateThetaDisplay(this.value)">
+            <span id="thetaValue" class="rightrange">&theta;&nbsp;=&nbsp;0&nbsp;&pi;</span><br>
+            <span>Stretch :</span><br>
+            <input type="range" id="xRange" min="-2" max="2" step="0.01" value="0" onchange="updateXDisplay(this.value)" oninput="updateXDisplay(this.value)">
+            <span id="xStrVal" class="rightrange">x&nbsp;:&nbsp;1</span>
+            <input type="range" id="yRange" min="-2" max="2" step="0.01" value="0" onchange="updateYDisplay(this.value)" oninput="updateYDisplay(this.value)">
+            <span id="yStrVal" class="rightrange">y&nbsp;:&nbsp;1</span>
+          </div>
+        <h2>View Options</h2>
+        <div id="view">
+          <input class="checkopt" type="checkbox" id="dispCanonic" onchange="dispCanonic=!dispCanonic;drawEverything(transformedMatrix,zoom);" checked>
+          <label for="dispCanonic">Display Canonic Basis</label>
+
+          <input class="checkopt" type="checkbox" id="dispDetPlg" onchange="dispDetPlg=!dispDetPlg;drawEverything(transformedMatrix,zoom);" checked>
+          <label for="dispDetPlg">Display Determinant</label>
+
+          <input class="checkopt" type="checkbox" id="dispeigvect" onchange="dispeigvect=!dispeigvect;drawEverything(transformedMatrix,zoom);" checked>
+          <label for="dispeigvect">Display Eigenvectors</label>
+
+          <input class="checkopt" type="checkbox" id="projectCpEigvect" onchange="projectCpEigvect=!projectCpEigvect;drawEverything(transformedMatrix,zoom);" checked>
+          <label for="projectCpEigvect">Project Complex Eigenvectors on Real Plane</label>
+
+          <span class="anim">Animations Duration :</span>
+          <input type="range" id="nbStepsRange" min="0.1" max="5" step="0.1" value="2.0" onchange="changeAnimationDuration(this.value)" oninput="changeAnimationDuration(this.value)">
+          <span id="animDuration">2 s</span>
+        </div>
+      <h2>About this Website</h2>
+      <p>This website has been created by <a href="https://github.com/Teskann">Teskann</a> and was inspired by the amazing work of Grant Sanderson on 
+        <a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab">Essence of 
+      Linear Algebra</a> YouTube series (on <a href="https://www.youtube.com/c/3blue1brown">3blue1brown</a> channel).
+      </p>
+      <p>The source code of this page is avaliable on this <a href="https://github.com/Teskann/matransform">Github repository</a>.</p>
+      </div>
+    <canvas id="myCanvas"></canvas>
+    
+    <script src="matrice.js"></script>
+  </body>
+</html>
