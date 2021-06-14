@@ -43,6 +43,8 @@
   #sidebar {
     grid-area: sidebar;
     border-radius: var(--main-radius);
+    width: 100%;
+    height: 100%;
   }
 
 .border:hover{
@@ -131,8 +133,8 @@ a {
     margin: auto;
     top: 50%;
     transform: translateY(-50%);
-    width: calc(100% - var(--border) - 30px);
-    height: calc(100% - var(--border) - 30px);
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
 }
 
 #descr h2{
