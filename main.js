@@ -83,3 +83,13 @@ var vectorFieldViewer = `<h2>Vector Field Viewer</h2>
 <p>The code is however not optimized at all (only CPU computing for GUI rendering) 
 and not documented. Not good points but come on, it was my first project ever !
 Maybe I'll rework on this one some day ...</p>`
+
+var razerWaver = `<h2>Razer Waver</h2>
+
+<p>Generate a customizable RGB wave effect for your Razer keyboard on Linux !</p>
+
+<p>OpenRazer does not provide a duration parameter for the wave effect on keyboards.
+The default speed is kind of high on multiple devices and it would be cool to slow it down a bit.
+Polychromatic provides an effect editor where you can create your own animations for
+your keyboard, including a wave. However, this can be long to setup by hand. Use Razer Waver to
+create it in a second !</p>`
