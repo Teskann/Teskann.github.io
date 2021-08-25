@@ -21,12 +21,12 @@
   .container {
     display: grid;
     height: calc(100% - var(--nav-height));
-    grid-template-columns: 0.7fr 1fr 0.5fr 0.5fr;
+    grid-template-columns: 0.7fr 0.5fr 0.5fr 0.5fr 0.5fr;
     grid-template-rows: 1.2fr 1fr 1fr;
     grid-template-areas:
-      "sidebar main main main"
-      "sidebar border1 border2 border2"
-      "sidebar border3 border4 border5";
+      "sidebar main main main main"
+      "sidebar border1 border1 border2 border2"
+      "sidebar border3 border4 border5 border6";
     grid-gap: var(--gap);
     font-weight: 800;
     text-transform: uppercase;
@@ -187,14 +187,15 @@ a {
   @media (orientation: portrait) {
     .container {
       grid-template-columns: 1fr;
-      grid-template-rows: 2fr 1fr 1fr 1fr 0.7fr 0.7fr;
+      grid-template-rows: 2fr 1fr 1fr 1fr 0.7fr 0.7fr 0.7fr;
       grid-template-areas:
         "main"
         "border1"
         "border2"
         "border3"
         "border4"
-        "border5";
+        "border5"
+        "border6";
     }
     #descr{
         display: none;
