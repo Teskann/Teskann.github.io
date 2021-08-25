@@ -71,6 +71,10 @@
     grid-area: border5;
 }
 
+#border6 {
+  grid-area: border6;
+}
+
 #nav {
     text-align: center;
     display: table;
