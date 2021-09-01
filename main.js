@@ -84,6 +84,10 @@ var vectorFieldViewer = `<h2>Vector Field Viewer</h2>
 and not documented. Not good points but come on, it was my first project ever !
 Maybe I'll rework on this one some day ...</p>`
 
+var mdtoc = `<h2>mdtoc</h2>
+
+<p>Create tables of contents for your markdown files !</p>`
+
 var razerWaver = `<h2>Razer Waver</h2>
 
 <p>Generate a customizable RGB wave effect for your Razer keyboard on Linux !</p>
